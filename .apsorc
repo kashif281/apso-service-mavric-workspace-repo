@@ -1,0 +1,56 @@
+{
+  "entities": [
+    {
+      "name": "User",
+      "created_at": true,
+      "updated_at": true,
+      "fields": [
+        {
+          "name": "username",
+          "type": "varchar",
+          "nullable": false,
+          "isIndex": true,
+          "isUnique": true
+        },
+        {
+          "name": "email",
+          "type": "varchar",
+          "nullable": false,
+          "isIndex": true,
+          "isUnique": true
+        },
+        {
+          "name": "password_hash",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "first_name",
+          "type": "varchar",
+          "nullable": true
+        },
+        {
+          "name": "last_name",
+          "type": "varchar",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "timestamptz",
+          "nullable": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamptz",
+          "nullable": false,
+          "default": "CURRENT_TIMESTAMP"
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    }
+  ],
+  "relationships": [],
+  "_removedEntities": []
+}

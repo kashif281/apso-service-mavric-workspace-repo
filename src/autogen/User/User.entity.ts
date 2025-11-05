@@ -5,8 +5,6 @@
 import {
   Column,
   Entity,
-  CreateDateColumn,
-  UpdateDateColumn,
   PrimaryGeneratedColumn,
   Generated,
   JoinColumn,
@@ -35,12 +33,6 @@ export class User {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
-
   @IsOptional({ groups: [UPDATE] })
   @IsNotEmpty({ groups: [CREATE] })
   @Column({ type: 'varchar', length: 255, nullable: false })
@@ -63,12 +55,6 @@ export class User {
   @IsOptional({ groups: [UPDATE] })
   @Column({ type: 'varchar', length: 255, nullable: true })
   last_name: string;
-
-  @Column({ type: 'timestamptz', nullable: false })
-  created_at: Date;
-
-  @Column({ type: 'timestamptz', nullable: false })
-  updated_at: Date;
 
   // Associations
 }

@@ -14,10 +14,6 @@ export class UserCreate {
   first_name: string;
   @ApiProperty()
   last_name: string;
-  @ApiProperty()
-  created_at: Date;
-  @ApiProperty()
-  updated_at: Date;
 }
 
 export class User {
@@ -33,12 +29,4 @@ export class User {
   first_name: string;
   @ApiProperty()
   last_name: string;
-  @ApiProperty()
-  created_at: Date;
-  @ApiProperty()
-  updated_at: Date;
-  @ApiProperty()
-  created_at: Date;
-  @ApiProperty()
-  updated_at: Date;
 }

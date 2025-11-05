@@ -2,8 +2,8 @@
   "entities": [
     {
       "name": "User",
-      "created_at": true,
-      "updated_at": true,
+      "created_at": false,
+      "updated_at": false,
       "fields": [
         {
           "name": "username",
@@ -22,29 +22,23 @@
         {
           "name": "password_hash",
           "type": "varchar",
-          "nullable": false
+          "nullable": false,
+          "isIndex": false,
+          "isUnique": false
         },
         {
           "name": "first_name",
           "type": "varchar",
-          "nullable": true
+          "nullable": true,
+          "isIndex": false,
+          "isUnique": false
         },
         {
           "name": "last_name",
           "type": "varchar",
-          "nullable": true
-        },
-        {
-          "name": "created_at",
-          "type": "timestamptz",
-          "nullable": false,
-          "default": "CURRENT_TIMESTAMP"
-        },
-        {
-          "name": "updated_at",
-          "type": "timestamptz",
-          "nullable": false,
-          "default": "CURRENT_TIMESTAMP"
+          "nullable": true,
+          "isIndex": false,
+          "isUnique": false
         }
       ],
       "indexes": [],

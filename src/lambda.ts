@@ -21,6 +21,12 @@ export const handler = async (event, context) => {
 
   if (!cachedServer) {
     const nestApp = await NestFactory.create(AppModule);
+    nestApp.enableCors({
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    });
+
     await configureNestApp(nestApp);
     await nestApp.init();
     cachedServer = serverlessExpress({

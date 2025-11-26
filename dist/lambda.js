@@ -7,6 +7,18 @@ const app_module_rest_1 = require("./app.module.rest");
 const nest_app_config_1 = require("./config/nest-app.config");
 let cachedServer;
 const handler = async (event, context) => {
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+                'Access-Control-Max-Age': '86400',
+            },
+            body: '',
+        };
+    }
     if (!cachedServer) {
         const nestApp = await core_1.NestFactory.create(app_module_rest_1.AppModule);
         await (0, nest_app_config_1.configureNestApp)(nestApp);
